@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: application
+spec:
+  containers:
+    - name: application-container
+      image: backend:1.6
+      ports:
+        - containerPort: 3000
