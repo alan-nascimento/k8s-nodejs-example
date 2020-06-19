@@ -1,13 +1,12 @@
 FROM node:lts-alpine as builder
 
-COPY ./package.json .
+COPY package.json yarn.lock ./
+RUN yarn install --only=prod&& mkdir /react-frontend && mv ./node_modules ./react-frontend
 
-RUN yarn install
+WORKDIR /react-frontend
 
-COPY ./yarn.lock .
+COPY . .
 
-COPY ./build /var/www/html
-
-WORKDIR /var/www/html
+RUN yarn build
 
 EXPOSE 3000

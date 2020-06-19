@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  database:
+    container_name: postgres
+    image: postgres:11
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGREs_HOST=${DB_HOST}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+    volumes:
+      - ./database/postgres:/var/lib/postgresql/data
+  app:
+    image: backend:1.6
+    container_name: node-api
+    ports:
+      - "3000:3000"
+    links:
+      - database
+    depends_on:
+      - database
+    environment:
+      - DATABASE_URL=postgres://${DB_USER}:${DB_PASS}@${DB_HOST}:5432/${DB_NAME}
+      - NODE_ENV=${NODE_ENV}
+      - PORT=${PORT}
