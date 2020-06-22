@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
     - name: application-container
-      image: backend:1.6
+      image: destark/node-api:1.0.0
       ports:
         - containerPort: 3000

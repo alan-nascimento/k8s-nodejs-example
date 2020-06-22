@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application-deployment
+spec:
+  selector:
+    matchLabels:
+      name: application-deployment
+  template:
+    metadata:
+      labels:
+        name: application-deployment
+    spec:
+      containers:
+        - name: application-container
+          image: destark/node-api:1.0.0
+          ports:
+            - containerPort: 3000
