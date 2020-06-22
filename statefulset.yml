@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: statefulset-mysql
+spec:
+  template:
+    metadata:
+      name: postgres
+    spec:
+      containers:
+        - name: postgres-container
+          image: postgres:11
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: "database"
+            - name: POSTGRES_USER
+              value: "root"
+            - name: POSTGREs_HOST
+              value: "localhost"
+            - name: POSTGRES_PASSWORD
+              value: "root"
