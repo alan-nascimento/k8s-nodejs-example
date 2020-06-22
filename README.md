@@ -1,2 +1,1 @@
-# shell-script
-Aws
+# NodeJS + Docker + Kubernetes
