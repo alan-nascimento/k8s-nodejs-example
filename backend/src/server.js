@@ -1,7 +1,7 @@
-require("dotenv/config");
+require('dotenv/config');
 
-const express = require("express");
-const { Client } = require("pg");
+const express = require('express');
+const { Client } = require('pg');
 
 const PORT = 3000;
 
@@ -9,19 +9,19 @@ const server = express();
 
 server.use(express.json());
 
-server.get("/", (req, res) => res.json({ hello: "world" }));
+server.get('/', (req, res) => res.json({ hello: 'world' }));
 
 const client = new Client({
-  user: "root",
-  host: "localhost",
-  database: "database",
-  password: "root",
+  user: 'root',
+  host: 'localhost',
+  database: 'database',
+  password: 'root',
   port: 5432,
 });
 
 client.connect();
 
-client.query("SELECT NOW()", (err, res) => {
+client.query('SELECT NOW()', (err, res) => {
   console.log(err, res);
 
   client.end();
