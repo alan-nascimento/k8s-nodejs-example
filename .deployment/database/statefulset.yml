@@ -21,16 +21,16 @@ spec:
           env:
             - name: POSTGRES_DB
               value: 'database'
-            - name: POSTGRES_USER
-              value: 'root'
             - name: POSTGRES_HOST
               value: 'database'
+            - name: POSTGRES_USER
+              value: 'root'
             - name: POSTGRES_PASSWORD
               value: 'root'
           volumeMounts:
             - name: postgres-volume
-              mounthPath: /var/lib/postgresql/data
-          volumes:
-            - name: postgres-volume
-              persistentVolumeClaim:
-                claimName: postgres-config
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-volume
+          persistentVolumeClaim:
+            claimName: postgres-config

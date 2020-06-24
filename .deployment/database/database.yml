@@ -11,9 +11,9 @@ spec:
       env:
         - name: POSTGRES_DB
           value: 'database'
+        - name: POSTGRES_HOST
+          value: 'database'
         - name: POSTGRES_USER
           value: 'root'
-        - name: POSTGREs_HOST
-          value: 'localhost'
         - name: POSTGRES_PASSWORD
           value: 'root'
