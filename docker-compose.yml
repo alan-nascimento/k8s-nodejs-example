@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   database:
-    container_name: postgres
+    container_name: database
     image: postgres:11
     ports:
       - '5432:5432'
@@ -14,7 +14,7 @@ services:
       - ./database/postgres:/var/lib/postgresql/data
 
   app:
-    container_name: application
+    container_name: app
     depends_on:
       - database
     ports:
@@ -27,4 +27,3 @@ services:
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASS}
-    restart: on-failure
