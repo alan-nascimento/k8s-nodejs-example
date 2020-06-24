@@ -20,13 +20,13 @@ spec:
             - containerPort: 5432
           env:
             - name: POSTGRES_DB
-              value: "database"
+              value: 'database'
             - name: POSTGRES_USER
-              value: "root"
-            - name: POSTGREs_HOST
-              value: "localhost"
+              value: 'root'
+            - name: POSTGRES_HOST
+              value: 'database'
             - name: POSTGRES_PASSWORD
-              value: "root"
+              value: 'root'
           volumeMounts:
             - name: postgres-volume
               mounthPath: /var/lib/postgresql/data

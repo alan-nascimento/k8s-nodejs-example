@@ -10,10 +10,10 @@ spec:
         - containerPort: 5432
       env:
         - name: POSTGRES_DB
-          value: "database"
+          value: 'database'
         - name: POSTGRES_USER
-          value: "root"
+          value: 'root'
         - name: POSTGREs_HOST
-          value: "localhost"
+          value: 'localhost'
         - name: POSTGRES_PASSWORD
-          value: "root"
+          value: 'root'
