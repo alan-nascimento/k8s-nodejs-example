@@ -1,4 +1,8 @@
 {
+  "license": "MIT",
+  "author": {
+    "name": "Alan Nascimento"
+  },
   "scripts": {
     "start": "node ./src/server.js"
   },
