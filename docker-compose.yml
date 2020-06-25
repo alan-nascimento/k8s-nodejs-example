@@ -7,11 +7,10 @@ services:
       - '5432:5432'
     environment:
       - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_HOST=${DB_HOST}
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
     volumes:
-      - ./database/postgres:/var/lib/postgresql/data
+      - ./postgres:/var/lib/postgresql/data
 
   app:
     container_name: app
