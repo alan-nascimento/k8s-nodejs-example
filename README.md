@@ -1,13 +1,14 @@
-# Kubernetes and Docker for NodeJS + PostgreSQL example
+# Kubernetes for NodeJS + PostgreSQL example
 
-> Example Node.js application with Kubernetes and Docker config to deploy.
+> Example Node.js application with Kubernetes and Docker configs to deploy.
 
 ### What's in repo?
 
 - Hello world Express server
-- Kubernetes deployment
 - Kubernetes service
+- Kubernetes deployment
 - Kubernetes statefulset
+- Kubernetes persistence volume
 
 ### License
 
