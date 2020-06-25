@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: postgres-statefulset-v2
+  name: postgres-statefulset-v3
 spec:
   serviceName: database
   selector:
@@ -25,9 +25,9 @@ spec:
             - name: POSTGRES_PASSWORD
               value: 'root'
           volumeMounts:
-            - name: postgres-volume
-              mountPath: '/var/lib/postgresql/data'
+            - mountPath: /var/lib/postgresql/data
+              name: postgres-volume
       volumes:
         - name: postgres-volume
           persistentVolumeClaim:
-            claimName: postgres-config
+            claimName: postgres-pvc
